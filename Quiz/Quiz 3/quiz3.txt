@@ -1,0 +1,7 @@
+1.SELECT CONCAT(last_name,', ',job_id) 'Employee and Title' from employees
+
+2.SELECT last_name,salary,commission FROM employees
+ORDER BY salary,commission,title DESC
+
+3.SELECT Last_Name ,Hire_Date FROM employees
+WHERE YEAR(Hire_Date) = '1994'

@@ -1,0 +1,18 @@
+1.SELECT CONCAT(First_name,' ',Last_name) AS "Employee Name", MIN(Salary), MAX(Salary),SUM(Salary),AVG(Salary) 
+FROM employees GROUP BY Job_Id
+2.SELECT First_Name,Last_Name, Manager_Id,MAX(Salary)
+FROM employees
+WHERE Manager_Id IS NOT NULL
+GROUP by Manager_Id HAVING MIN(SALARY)<=6000 
+ORDER BY Salary DESC
+3.SELECT Department_Name, Location_Id AS "Location",COUNT(*) 
+AS 'Number of People', 
+ROUND(AVG(employees.Salary),2) AS "Salary"
+FROM departments
+INNER JOIN employees
+ON employees.Manager_id = departments.Manager_Id GROUP BY Department_Name
+4.SELECT CONCAT(First_name,' ',Last_name) AS "Employee" , COUNT(*) AS 'Number of People with same job' FROM employees GROUP BY Job_Id
+5.SELECT LAST_NAME, SALARY, COMMISION_PCT
+FROM employees
+WHERE COMMISION_PCT IS NOT null 
+ORDER BY SALARY DESC , COMMISION_PCT DESC

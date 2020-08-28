@@ -1,0 +1,8 @@
+1.SELECT MAX(salary) AS 'Maximum',MIN(salary) AS 'Minimum',SUM(salary) AS 'Sum', AVG(salary) AS 'Average' FROM employees
+2.SELECT Job_Id, max(salary) as 'MAXIMUM', min(salary) as 'MINIMUM', sum(salary) as 'SUM', avg(salary) as 'AVERAGE' FROM employee GROUP BY Job_Id
+3.SELECT Job_Id, count(Employee_Id) as 'Number of Employees' from employee group by Job_Id
+4.SELECT m.Last_Name as 'Manager', m.Employee_Id as 'Manager ID', e.last_Name as 'Employee', min(e.Salary) as 'Salary' 
+FROM employee e 
+join employee m on (e.Manager_id=m.Employee_Id) 
+group by m.Employee_Id 
+having min(e.salary) >= 6000

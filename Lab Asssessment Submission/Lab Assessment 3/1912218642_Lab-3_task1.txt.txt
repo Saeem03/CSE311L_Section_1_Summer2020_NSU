@@ -1,0 +1,1 @@
+SELECT Last_Name,Salary as 'Weekly Salary',Department_Id FROM `employees` ;
